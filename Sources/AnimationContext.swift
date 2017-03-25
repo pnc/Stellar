@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationSequenceDelegate {
+class AnimationContext: NSObject, UIDynamicAnimatorDelegate, AnimationSequenceDelegate {
     fileprivate weak var object: DriveAnimateBehaviors!
     fileprivate var mutipleSequences = [AnimationSequence]()
     

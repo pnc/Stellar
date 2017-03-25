@@ -10,8 +10,8 @@ import UIKit
 
 extension CALayer: DriveAnimateBehaviors {
     
-    func behavior(forType type: AnimationType, step: AnimationStep) -> UIDynamicBehavior {
-        
+    public func behavior(forType type: AnimationType, step: AnimationStep) -> UIDynamicBehavior {
+
         var behavior: UIDynamicBehavior!
         
         let mainType = type.mainType

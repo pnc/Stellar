@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol TimingSolvable {
+public protocol TimingSolvable {
     func solveOn(_ time: Double, epslion: Double) -> Double
 }

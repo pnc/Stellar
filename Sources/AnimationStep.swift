@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class AnimationStep {
+public class AnimationStep {
     var types = [AnimationType]()
     var duration: CFTimeInterval = 0.25
     var timing: TimingFunctionType = .default

@@ -52,7 +52,7 @@ public enum TimingFunctionType {
     case custom(Double, Double, Double, Double)
     
     
-    func easing() -> TimingSolvable {
+    public func easing() -> TimingSolvable {
         switch self {
         case .default:
             return UnitBezier(p1x: 0.25, p1y: 0.1, p2x: 0.25, p2y: 1.0)

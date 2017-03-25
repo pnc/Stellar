@@ -16,11 +16,11 @@ private let SolveForUnReverse = { (f: CFTimeInterval) in
     return f
 }
 
-final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, TimingType {
+public final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, TimingType {
     
-    var duration: CFTimeInterval = 0.25
+    public var duration: CFTimeInterval = 0.25
     var delay: CFTimeInterval = 0.0
-    var timingFunction: TimingSolvable = TimingFunctionType.default.easing()
+    public var timingFunction: TimingSolvable = TimingFunctionType.default.easing()
     var from: T
     var to: T
     var render: (T) -> Void
@@ -28,7 +28,7 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, Timing
     var repeatCount = 0
     var completion: ((Bool) -> Void)?
     var speed: Double = 1.0
-    var timeOffset: CFTimeInterval = 0.0 {
+    public var timeOffset: CFTimeInterval = 0.0 {
         didSet {
             updateFrame()
         }
@@ -48,7 +48,7 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, Timing
     }()
     
     //MARK: Life cycle methods
-    init(from: T, to: T, render: @escaping (T) -> Void) {
+    public init(from: T, to: T, render: @escaping (T) -> Void) {
         self.from = from
         self.to = to
         self.render = render
@@ -102,14 +102,14 @@ final class DynamicItemBasic<T: Interpolatable>: NSObject, UIDynamicItem, Timing
     }
     
     //MARK: UIDynamicItem protocol
-    var center: CGPoint = CGPoint.zero {
+    public var center: CGPoint = CGPoint.zero {
         didSet {
             updateFrame()
         }
     }
     
-    var transform: CGAffineTransform = CGAffineTransform.identity
-    var bounds: CGRect {
+    public var transform: CGAffineTransform = CGAffineTransform.identity
+    public var bounds: CGRect {
         get {
             return CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
         }

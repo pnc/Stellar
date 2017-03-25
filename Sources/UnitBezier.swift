@@ -46,7 +46,7 @@ public struct UnitBezier {
 extension UnitBezier: Equatable { }
 
 extension UnitBezier: TimingSolvable {
-    func solveOn(_ time: Double, epslion: Double) -> Double {
+    public func solveOn(_ time: Double, epslion: Double) -> Double {
         return self.solve(time, epsilon: epslion)
     }
 }

@@ -12,7 +12,7 @@ protocol AnimationSequenceDelegate: class {
     func animationSequenceDidComplete(_ sequence: AnimationSequence);
 }
 
-internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
+public class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
     var steps: [AnimationStep] = Array()
     weak var view: DriveAnimateBehaviors!
     weak var delegate: AnimationSequenceDelegate?
@@ -88,13 +88,13 @@ internal class AnimationSequence: NSObject, UIDynamicAnimatorDelegate {
     }
     
     //MARK: UIDynamicAnimatorDelegate methods
-    func dynamicAnimatorDidPause(_ animator: UIDynamicAnimator) {
+    public func dynamicAnimatorDidPause(_ animator: UIDynamicAnimator) {
         animator.removeAllBehaviors()
         popFirstStepIfExsist()
         excuteFirstStepIfExist()
     }
     
-    func dynamicAnimatorWillResume(_ animator: UIDynamicAnimator) {
+    public func dynamicAnimatorWillResume(_ animator: UIDynamicAnimator) {
         
     }
 }

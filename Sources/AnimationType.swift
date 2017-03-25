@@ -43,7 +43,7 @@ enum AnimationSubType {
 }
 
 //temp record for animation type
-internal class AnimationType {
+public class AnimationType {
     var mainType: AnimationStyle
     var subType: AnimationSubType
     
